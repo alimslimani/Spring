@@ -1,2 +1,2 @@
 server:
-  port: ${port_number}
+  port: 4200
