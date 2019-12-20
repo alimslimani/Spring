@@ -7,6 +7,8 @@ target/
 /.idea
 /mvnw
 /.mvn
+/conference-demo/.mvn
+/conference-demo/target
 ### STS ###
 .apt_generated
 .classpath
