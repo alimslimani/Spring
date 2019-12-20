@@ -19,6 +19,9 @@
     <name>springBootFundamentals</name>
     <description>Demo project for Spring Boot Fundamentals</description>
 
+    <properties>
+        <java.version>11</java.version>
+    </properties>
     <dependencies>
 
         <dependency>
