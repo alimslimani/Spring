@@ -1,23 +1,45 @@
 package com.alm.highfi.conferencedemo.controllers;
 
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.security.Principal;
 
-@RestController
+@Controller
 public class HomeController {
     @Value("${app.version}")
     private String appVersion;
 
-    @GetMapping
     @RequestMapping("/")
-    public Map getStatus() {
-        Map map = new HashMap<String, String>();
-        map.put("app-version", appVersion);
-        return map;
+    public String index(Model model, Principal principal) {
+        return "index";
+    }
+
+    @RequestMapping("/securedPage")
+    public String securedPage(Model model, Principal principal) {
+        return "securedPage";
+    }
+
+
+    @RequestMapping(value = "/user")
+    public String user() {
+        return "user";
+    }
+
+    @RequestMapping(value = "/admin")
+    public String admin() {
+        return "admin";
+    }
+
+    @RequestMapping(value = "/login")
+    public String login() {
+        return "login";
+    }
+
+    @RequestMapping(value = "/403")
+    public String Error403() {
+        return "403";
     }
 }
